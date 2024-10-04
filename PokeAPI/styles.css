@@ -1,0 +1,31 @@
+body {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.logo {
+    width: 150px;
+}
+
+.pokeball-icon {
+    width: 50px;
+}
+
+.pokemon-card img {
+    width: 180px;
+    height: 180px;
+    transition: transform 0.3s ease;
+}
+
+.pokemon-card img:hover {
+    transform: scale(1.3);
+}
+
+.pokemon-card {
+    display: none;
+}
+
+footer {
+    margin-top: 50px;
+}
+
+

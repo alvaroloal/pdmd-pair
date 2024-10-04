@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <header class="bg-primary p-3 d-flex justify-content-between align-items-center">
+        <div>
+            <img src="https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png" alt="Pokemon Logo" class="logo">
+        </div>
+        <nav>
+            <ul class="nav">
+                <li class="nav-item"><a href="#" class="nav-link text-white">Inicio</a></li>
+                <li class="nav-item"><a href="#" class="nav-link text-white">Pokemon</a></li>
+                <li class="nav-item"><a href="#" class="nav-link text-white">Especies</a></li>
+                <li class="nav-item"><a href="#" class="nav-link text-white">Habilidades</a></li>
+            </ul>
+        </nav>
+        <div>
+            <img src="https://cdn-icons-png.flaticon.com/512/528/528101.png" alt="Pokeball Icon" class="pokeball-icon">
+        </div>
+    </header>
+
+    <main class="container my-5">
+        <div class="row">
+            <div class="col-lg-4 mb-5 bg-secondary p-2 rounded shadow">
+                <h5 class="mb-3 bg-white p-2 rounded shadow">Pokémon</h5>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Buscar.." id="search">
+                    <button class="btn btn-success" type="button" id="getButton">GET</button>
+                </div>
+                <div class="list-group">
+                    <button type="button" class="list-group-item list-group-item-action" data-id="bulbasaur">Bulbasaur</button>
+                    <button type="button" class="list-group-item list-group-item-action" data-id="ivysaur">Ivysaur</button>
+                    <button type="button" class="list-group-item list-group-item-action" data-id="venusaur">Venusaur</button>
+                    <button type="button" class="list-group-item list-group-item-action" data-id="charmander">Charmander</button>
+                    <button type="button" class="list-group-item list-group-item-action" data-id="charizard">Charizard</button>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div class="row" id="pokemonDisplay">
+                    <div class="col-md-4 text-center mb-4 pokemon-card" id="bulbasaur">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png" class="img-fluid" alt="Bulbasaur">
+                        <p>Bulbasaur</p>
+                    </div>
+                    <div class="col-md-4 text-center mb-4 pokemon-card" id="ivysaur">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png" class="img-fluid" alt="Ivysaur">
+                        <p>Ivysaur</p>
+                    </div>
+                    <div class="col-md-4 text-center mb-4 pokemon-card" id="venusaur">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png" class="img-fluid" alt="Venusaur">
+                        <p>Venusaur</p>
+                    </div>
+                    <div class="col-md-4 text-center mb-4 pokemon-card" id="charmander">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png" class="img-fluid" alt="Charmander">
+                        <p>Charmander</p>
+                    </div>
+                    <div class="col-md-4 text-center mb-4 pokemon-card" id="charizard">
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png" class="img-fluid" alt="Charizard">
+                        <p>Charizard</p>
+                    </div>
+                    <div class="col-md-4 text-center mb-4 pokemon-card" id="ivysaur" >
+                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png" class="img-fluid" alt="Ivysaur">
+                        <p>Ivysaur</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-primary text-white p-3 mt-5 d-flex justify-content-between">
+        <div>
+            <p>Triana, Sevilla</p>
+            <p>Salesianos de Triana</p>
+        </div>
+        <div>
+            <p>Contacto</p>
+        </div>
+        <div>
+            <p>Creado por</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>
