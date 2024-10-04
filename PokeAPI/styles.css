@@ -1,6 +1,6 @@
 body {
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    background-color:#a7aec9;
+    background-color: #8d95a3;
 }
 
 .logo {
@@ -35,4 +35,44 @@ footer {
 }
 
 
+ .pokemon-name {
+    color: green; 
+    text-align: center; 
+    font-size: 24px; 
+    margin: 0; 
+}
+
+
+.type-box {
+    background-color: #49805e; 
+    color: white; 
+    padding: 5px;
+    border-radius: 5px;
+    margin: 5px 0;
+}
+
+.type-box.planta {
+    background-color: #24a82f; 
+}
+
+.type-box.veneno {
+    background-color: #9c27b0; 
+}
+.weakness-box {
+    background-color: #f44336; 
+    color: white; 
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
+    margin: 5px 0;
+}
+.weakness-box.volador {
+    background-color: #81d4fa; 
+}
+.weakness-box.psiquico {
+    background-color: #e91e63; 
+}
+.weakness-box.hielo {
+    background-color: #00bcd4; 
+}
 
