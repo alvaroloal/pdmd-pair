@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
         button.addEventListener('click', function() {
             const selectedPokemon = this.getAttribute('data-id');
             document.querySelectorAll('.pokemon-card').forEach(card => {
-                card.style.display = 'none'; // para oculta todos los Pokémon
+                card.style.display = 'none'; // para oculta todos
             });
             document.getElementById(selectedPokemon).style.display = 'block'; // muestra solo el poke seleccionado
         });
@@ -20,4 +20,5 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('getButton').addEventListener('click', function() {
         alert('Obteniendo datos de PokeAPI...');
     });
+
 });
