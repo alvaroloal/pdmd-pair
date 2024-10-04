@@ -26,12 +26,13 @@ body {
 }
 
 footer {
-    margin-top: 210px;
+    margin-top: 230px;
+    
 }
 
 .footer-content {
     text-align: center;
-    flex: 1; /* Esto hace que cada div ocupe el mismo espacio */
+    flex: 1;
 }
 
 
