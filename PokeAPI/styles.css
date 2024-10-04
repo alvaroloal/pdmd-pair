@@ -1,5 +1,6 @@
 body {
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color:#a7aec9;
 }
 
 .logo {
@@ -11,7 +12,7 @@ body {
 }
 
 .pokemon-card img {
-    width: 180px;
+    width: 1180px;
     height: 180px;
     transition: transform 0.3s ease;
 }
@@ -25,7 +26,13 @@ body {
 }
 
 footer {
-    margin-top: 50px;
+    margin-top: 210px;
 }
+
+.footer-content {
+    text-align: center;
+    flex: 1; /* Esto hace que cada div ocupe el mismo espacio */
+}
+
 
 
