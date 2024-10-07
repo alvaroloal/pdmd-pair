@@ -47,4 +47,6 @@ $(document).ready(function() {
             alert("Error al obtener datos de la PokeAPI.");
         });
     }
+
+    
 });

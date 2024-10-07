@@ -47,4 +47,32 @@ $(document).ready(function() {
             alert("Error al obtener datos de la PokeAPI.");
         });
     }
+    $('#getButton').click(function() {
+        const url = 'https://pokeapi.co/api/v2/pokemon?limit=10'; // Cargar los primeros 10 Pokémon (puedes cambiar el límite)
+
+        $.get(url, function(data) {
+            const pokemonList = data.results;
+            let content = '';
+
+            pokemonList.forEach(pokemon => {
+                content += `
+                    <div class="col-md-4 mb-4">
+                        <div class="card text-center h-100">
+                            <a href="detalles.html?pokemon=${pokemon.name}">
+                                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.url.split('/')[6]}.png" class="card-img-top img-fluid" alt="${pokemon.name}">
+                            </a>
+                            <div class="card-body">
+                                <h5 class="card-title">${pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}</h5>
+                                <a href="detalles.html?pokemon=${pokemon.name}"><button class="btn btn-primary">Ver</button></a>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+
+            $('#data-content').html(content);
+        }).fail(function() {
+            $('#data-content').html('<p>No se pudieron cargar los Pokémon.</p>');
+        });
+    });
 });
