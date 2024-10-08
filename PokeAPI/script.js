@@ -1,10 +1,11 @@
 $(document).ready(function() {
+    // Cargar lista de Pokémon al cargar la página
     getPokemonListV2();
 
-    // Botón get
+    // Botón para volver a cargar la lista
     $('#getButton').on('click', function() {
         alert('Obteniendo datos de PokeAPI...');
-        getPokemonListV2();
+        getPokemonListV2();  // Reutiliza la misma función
     });
 
     function getPokemonListV2() {
@@ -12,67 +13,35 @@ $(document).ready(function() {
         $("#loading").show(); // Mostrar la imagen de carga
 
         $.ajax({
-            url: "https://pokeapi.co/api/v2/pokemon?limit=20", // Limitar a 20 para obtener menos datos
+            url: "https://pokeapi.co/api/v2/pokemon?limit=20", // Limitar a 20 Pokémon
             method: "GET",
         }).done(function(resp) {
-            setTimeout(function() {
-                $("#loading").hide(); // Ocultar la imagen de carga
-                var listadoPokemon = resp.results;
+            $("#loading").hide(); // Ocultar la imagen de carga
+            var listadoPokemon = resp.results;
 
-                // Iterar sobre cada Pokémon
-                listadoPokemon.forEach(function(pokemon) {
-                    var pokemonId = pokemon.url.split("/")[6];
+            // Iterar sobre cada Pokémon
+            listadoPokemon.forEach(function(pokemon) {
+                var pokemonId = pokemon.url.split("/")[6]; // Obtener ID del Pokémon
 
-                    // Obtener detalles de cada Pokémon
-                    $.get(pokemon.url, function(pokemonData) {
-                        var template = `
-                            <div class="col-md-4 mb-4">
-                                <div class="card text-center h-100">
-                                    <a href="detalles.html">
-                                        <img src="${pokemonData.sprites.front_default}" class="card-img-top img-fluid" alt="${pokemonData.name}">
-                                    </a>
-                                    <div class="card-body">
-                                        <h5 class="card-title">${pokemonData.name.charAt(0).toUpperCase() + pokemonData.name.slice(1)}</h5>
-                                        <p class="card-text">Altura: ${pokemonData.height} | Peso: ${pokemonData.weight}</p>
-                                        <a href="detalles.html"><button class="btn btn-primary">Ver</button></a>
-                                    </div>
-                                </div>
-                            </div>`;
-                        $("#data-content").append(template);
-                    });
-                });
-            }, 1000);
-        }).fail(function() {
-            $("#loading").hide(); // Ocultar la imagen de carga si hay un error
-            alert("Error al obtener datos de la PokeAPI.");
-        });
-    }
-    $('#getButton').click(function() {
-        const url = 'https://pokeapi.co/api/v2/pokemon?limit=10'; // Cargar los primeros 10 Pokémon (puedes cambiar el límite)
-
-        $.get(url, function(data) {
-            const pokemonList = data.results;
-            let content = '';
-
-            pokemonList.forEach(pokemon => {
-                content += `
+                // Generar la plantilla HTML
+                var template = `
                     <div class="col-md-4 mb-4">
                         <div class="card text-center h-100">
                             <a href="detalles.html?pokemon=${pokemon.name}">
-                                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.url.split('/')[6]}.png" class="card-img-top img-fluid" alt="${pokemon.name}">
+                                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonId}.png" class="card-img-top img-fluid" alt="${pokemon.name}">
                             </a>
                             <div class="card-body">
                                 <h5 class="card-title">${pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}</h5>
                                 <a href="detalles.html?pokemon=${pokemon.name}"><button class="btn btn-primary">Ver</button></a>
                             </div>
                         </div>
-                    </div>
-                `;
+                    </div>`;
+                
+                $("#data-content").append(template);
             });
-
-            $('#data-content').html(content);
         }).fail(function() {
-            $('#data-content').html('<p>No se pudieron cargar los Pokémon.</p>');
+            $("#loading").hide(); // Ocultar la imagen de carga si hay un error
+            alert("Error al obtener datos de la PokeAPI.");
         });
-    });
+    }
 });

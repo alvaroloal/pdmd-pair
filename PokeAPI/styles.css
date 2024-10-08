@@ -61,12 +61,15 @@ footer {
 .type-box.fairy { background-color: #F0B6B6; }
 
 .row {
-    background-color: #6c757d; 
-    min-height: 300px;         
-    padding: 20px;      
-    margin-bottom: 20px;      
-    border-radius: 10px; 
+    background-color: #EAE7E2;
+    width: 100%; 
+    height: auto;
+    min-height: 100px; 
+    padding: 10px;
+    margin-bottom: 20px; 
+    border-radius: 10px;
 }
+
 
 .navbar {
     background-color: rgba(0, 123, 255, 0.9); 
