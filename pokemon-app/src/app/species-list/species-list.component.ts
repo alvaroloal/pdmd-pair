@@ -1,4 +1,3 @@
-// species-list.component.ts
 import { Component, OnInit } from '@angular/core';
 import { Species } from '../models/species-list.interface';
 import { SpeciesService } from '../services/species.service'; // Cambia a SpeciesService
@@ -8,23 +7,51 @@ import { SpeciesService } from '../services/species.service'; // Cambia a Specie
   templateUrl: './species-list.component.html',
   styleUrls: ['./species-list.component.css']
 })
-export class SpeciesListComponent implements OnInit {
-  species: Species[] = [];
+export class SpeciesListComponent {
+  types: any[] = []; // Aquí se almacenarán los tipos de Pokémon
 
-  constructor(private speciesService: SpeciesService) {} // Cambia a SpeciesService
+  constructor(private speciesService: SpeciesService) {}
 
-  ngOnInit(): void {
-    this.loadSpecies();
+  ngOnInit() {
+    this.getPokemonTypes(); // Llama al método para obtener los tipos cuando el componente se inicie
   }
 
-  loadSpecies(): void {
-    this.speciesService.getSpecies().subscribe(
-      (data: Species[]) => {
-        this.species = data;
-      },
-      (error) => {
-        console.error('Error fetching species:', error); // Manejo de errores
-      }
-    );
+  getPokemonTypes() {
+    this.speciesService.getPokemonTypes().subscribe((data: any) => {
+      this.types = data.results;
+    });
   }
+
+  
+  getTypeIcon(type: string): string {
+    return `https://raw.githubusercontent.com/duiker101/pokemon-type-svg-icons/master/icons/${type}.svg`;
+  }
+
+  getBackgroundColor(type: string): string {
+    const colors: any = {
+      normal: '#A8A77A',
+      fighting: '#C22E28',
+      flying: '#A98FF3',
+      poison: '#A33EA1',
+      ground: '#E2BF65',
+      rock: '#B6A136',
+      bug: '#A6B91A',
+      ghost: '#735797',
+      steel: '#B7B7CE',
+      fire: '#EE8130',
+      water: '#6390F0',
+      grass: '#7AC74C',
+      electric: '#F7D02C',
+      psychic: '#F95587',
+      ice: '#96D9D6',
+      dragon: '#6F35FC',
+      dark: '#705746',
+      fairy: '#D685AD',
+      stellar: '#A98FF3',
+      unknown: '#B7B7CE'
+    };
+  
+    return colors[type.toLowerCase()] || '#777';
+  }
+  
 }

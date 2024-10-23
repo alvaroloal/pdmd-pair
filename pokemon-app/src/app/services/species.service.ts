@@ -19,7 +19,11 @@ export class SpeciesService {
 
   getSpecies(): Observable<Species[]> {
     return this.http.get<SpeciesResponse>(this.apiUrl).pipe(
-      map(response => response.results) // Extrae solo la propiedad 'results'
+      map(response => response.results)
     );
+  }
+
+  getPokemonTypes(): Observable<any> {
+    return this.http.get('https://pokeapi.co/api/v2/type');
   }
 }

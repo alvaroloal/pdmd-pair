@@ -1,13 +1,17 @@
 <div class="container">
-    <h2>Lista de Pokémon</h2>
+  <div class="text-center mb-4" style="max-width: 600px; margin: 0 auto; background-color: #f8f9fa; border: 2px solid #708599; border-radius: 10px; padding: 10px;">
+    <h2 style="font-size: 2rem; font-weight: bold; color: #708599;">
+      Lista de Pokémon
+    </h2>
+  </div>
     <div class="row">
       <div class="col-md-4" *ngFor="let pokemon of pokemons">
         <div class="card mb-4 shadow-sm">
           <img [src]="getPokemonImage(pokemon.url)" class="card-img-top" alt="{{ pokemon.name }}">
           <div class="card-body">
-            <h5 class="card-title">{{ pokemon.name | titlecase }}</h5>
+            <h5 class="card-title">{{ pokemon.name | titlecase | uppercase }}</h5>
             <p class="card-text">Detalles sobre {{ pokemon.name }}</p>
-            <div class="text-center"> <!-- Este div centra el contenido -->
+            <div class="text-center">
               <a [routerLink]="['/pokemon', pokemon.name]" class="btn btn-primary">Ver Detalles</a>
             </div>
           </div>

@@ -1,18 +1,19 @@
 .navbar {
-    align-items: center;
-  }
-  
-  .navbar-nav .nav-item {
-      margin-left: 15px;
-    }
-    
-    .navbar-nav .nav-link {
-      font-weight: bold;
-    }
-  
-    .navbar-brand img {
-      margin-right: 10px;
-    }
-    
-  
-    
+  align-items: center;
+}
+.navbar-nav{
+  background-color: rgb(215, 215, 216);
+  border-radius: 50px;
+}
+
+.navbar-nav .nav-item {
+  margin-left: 15px;
+}
+
+.navbar-nav .nav-link {
+  font-weight: bold;
+}
+
+.navbar-brand img {
+  margin-right: 10px;
+}

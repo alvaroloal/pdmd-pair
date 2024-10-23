@@ -25,7 +25,7 @@ export class AbilitiesComponent implements OnInit {
     this.abilityService.getAbilities().subscribe(
       (data: any) => {
         this.abilities = this.abilityService.mapAbilitiesWithImages(data.results);
-        this.limitedAbilities = this.abilities.slice(0, 10); // 10 habi
+        this.limitedAbilities = this.abilities.slice(0, 15); // 15 habilidades
         this.loading = false;  
       },
       (error) => {
