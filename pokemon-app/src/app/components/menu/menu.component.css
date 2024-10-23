@@ -1,0 +1,18 @@
+.navbar {
+    align-items: center;
+  }
+  
+  .navbar-nav .nav-item {
+      margin-left: 15px;
+    }
+    
+    .navbar-nav .nav-link {
+      font-weight: bold;
+    }
+  
+    .navbar-brand img {
+      margin-right: 10px;
+    }
+    
+  
+    

@@ -1,0 +1,10 @@
+<div *ngIf="loading" class="loading">Loading abilities...</div>
+<div *ngIf="error" class="error">{{ error }}</div>
+<div class="abilities-container" *ngIf="!loading && !error">
+  <div *ngFor="let ability of limitedAbilities" class="ability-card">
+    <img [src]="ability.imageUrl" [alt]="ability.name" class="ability-image" />
+    <div class="ability-info">
+      <h3 class="ability-name">{{ ability.name | titlecase }}</h3>
+    </div>
+  </div>
+</div>
