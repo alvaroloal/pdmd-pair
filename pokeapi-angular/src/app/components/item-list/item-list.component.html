@@ -1,0 +1,39 @@
+
+<div class="container mt-3">
+  <div class="text-center mb-3 mt-3" style="max-width: 600px; margin: 0 auto; border-bottom: 3px solid #708599; padding: 10px;">
+    <h2 style="font-size: 2rem; font-weight: bold; color: #45525f; margin-bottom: 0;">
+      Objetos
+    </h2>
+</div>
+
+    <div class="row row-cols-2 row-cols-md-4 g-4 px-5" id="pokemon-container">
+        @for(item of itemList ; track item){
+        <a class="text-decoration-none text-dark">
+          <div class="card shadow-lg h-100">
+            <div class="card-body text-center">
+              <h5>
+                <span class="badge badge-secondary mt-3 p-2 py-6 text-dark" style="font-size: 20px;">
+                    {{item.name | uppercase}}
+                </span>
+            </h5>
+            
+              <div class="imagen-circulo shadow-lg mx-auto d-flex justify-content-center align-items-center" style="width: 50%; height: 60%;">
+                <img [src]="createImgUrl(item.name)" class="card-img-top" alt="{{ item.name }}">
+              </div>
+              <div class="p-3"></div>
+            </div>
+          </div>
+        </a>
+    }
+    </div>
+
+    <div class="row col-6 mx-auto">
+      <div class="col-auto mx-auto shadow-lg rounded-3 my-4">
+        <button id="see-more" class="btn btn-outline-primary text-center p-2"
+          (click)="concatNextItemPage()">
+          Ver más
+      </button>
+      </div>
+    </div>
+
+</div>
