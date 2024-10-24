@@ -10,7 +10,7 @@ import { Ability } from '../models/abilities-list.interface';
 })
 export class AbilitiesComponent implements OnInit {
   abilities: Ability[] = [];
-  limitedAbilities: Ability[] = []; // Nuevo array para habilidades limitadas
+  limitedAbilities: Ability[] = [];
   loading: boolean = true;
   error: string | null = null;
 

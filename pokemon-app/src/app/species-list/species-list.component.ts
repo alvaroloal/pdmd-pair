@@ -8,12 +8,12 @@ import { SpeciesService } from '../services/species.service'; // Cambia a Specie
   styleUrls: ['./species-list.component.css']
 })
 export class SpeciesListComponent {
-  types: any[] = []; // Aquí se almacenarán los tipos de Pokémon
+  types: any[] = []; 
 
   constructor(private speciesService: SpeciesService) {}
 
   ngOnInit() {
-    this.getPokemonTypes(); // Llama al método para obtener los tipos cuando el componente se inicie
+    this.getPokemonTypes(); 
   }
 
   getPokemonTypes() {
@@ -53,5 +53,8 @@ export class SpeciesListComponent {
   
     return colors[type.toLowerCase()] || '#777';
   }
+
+
+  
   
 }

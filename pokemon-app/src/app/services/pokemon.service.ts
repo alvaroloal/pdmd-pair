@@ -1,5 +1,3 @@
-// src/services/pokemon.service.ts
-
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -17,6 +15,10 @@ export class PokemonService {
     return this.http.get<PokemonList>(this.apiUrl);
   }
 
+  
+   getPokemonDetails(name: string): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/${name}`);
+  }
 
   
 }

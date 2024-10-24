@@ -24,7 +24,6 @@ export class PokemonListComponent implements OnInit {
     });
   }
 
-
   getPokemonImage(url: string): string {
     const id = url.split('/')[6];
     return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`;

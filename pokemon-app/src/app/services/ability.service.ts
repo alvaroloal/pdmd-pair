@@ -20,7 +20,7 @@ export class AbilityService {
     return abilities.map(ability => ({
       name: ability.name,
       url: ability.url,
-      imageUrl: this.getImageForAbility(ability.name) // Obtén la URL de la imagen
+      imageUrl: this.getImageForAbility(ability.name)
     }));
   }
 
