@@ -5,6 +5,7 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { PokemonDetailsComponent } from './components/pokemon-details/pokemon-details.component';
 import { ItemListComponent } from './components/item-list/item-list.component';
 import { SpeciesListComponent } from './components/species-list/species-list.component';
+import { HomeComponent } from './components/home/home.component';
 
 
 const routes: Routes = [
@@ -13,8 +14,8 @@ const routes: Routes = [
 { path : 'pokemon/:id', component : PokemonDetailsComponent , pathMatch : 'full' },
 { path : 'items' , component : ItemListComponent},
 { path: 'species', component: SpeciesListComponent},
-{ path : '' , redirectTo : '/pokemon', pathMatch : 'full' },
-{ path : '**', component : PageNotFoundComponent }
+{ path: '', component: HomeComponent },
+{ path : '**', component : PageNotFoundComponent },
 
 ];
 

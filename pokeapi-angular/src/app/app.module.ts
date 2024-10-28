@@ -11,6 +11,8 @@ import { PokemonDetailsComponent } from './components/pokemon-details/pokemon-de
 import { ItemListComponent } from './components/item-list/item-list.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { SpeciesListComponent } from './components/species-list/species-list.component';
+import { HomeComponent } from './components/home/home.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { SpeciesListComponent } from './components/species-list/species-list.com
     PokemonDetailsComponent,
     ItemListComponent,
     MenuComponent,
-    SpeciesListComponent
+    SpeciesListComponent,
+    HomeComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
