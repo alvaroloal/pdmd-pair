@@ -1,0 +1,45 @@
+<div class="card pokemon-card" [class.turn-active]="isMyTurn" style="width: 18rem">
+  <!-- Animación de ataque y sonido -->
+  <div *ngIf="showAnimation">
+    <ng-lottie [options]="options"></ng-lottie>
+    <audio autoplay>
+      <source src="/assets/medium_explosion.mp3" type="audio/mpeg" />
+    </audio>
+  </div>
+
+  <!-- Imagen del Pokémon cuando no hay animación -->
+  <img
+    *ngIf="!showAnimation"
+    [src]="pokemon?.sprites?.front_default"
+    class="card-img-top pokemon-image"
+    [alt]="pokemon?.name"
+  />
+
+  <div class="card-body text-center">
+    <h5 class="card-title pokemon-name">{{ pokemon?.name }}</h5>
+    <p class="card-text">
+      <strong>Height:</strong> {{ pokemon?.height }} <br />
+      <strong>Weight:</strong> {{ pokemon?.weight }}
+    </p>
+
+    <!-- Barra de vida estilizada -->
+    <ngb-progressbar
+      class="mb-3 pokemon-life-bar"
+      [type]="getProgressBarColor()"
+      [value]="life"
+      [striped]="true"
+      [animated]="true"
+    >
+      <i>{{ life }}%</i>
+    </ngb-progressbar>
+
+    <!-- Botón de ataque -->
+    <button
+      (click)="doAttack()"
+      class="btn btn-attack"
+      [disabled]="!isMyTurn"
+    >
+      {{ isMyTurn ? 'Attack' : 'Waiting attack..' }}
+    </button>
+  </div>
+</div>

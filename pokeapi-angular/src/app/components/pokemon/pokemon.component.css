@@ -1,0 +1,60 @@
+/* Estilo principal de la carta de Pokémon */
+.pokemon-card {
+    background-color: #737985;
+    border: 2px solid #ffcb05;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+  }
+  .pokemon-card:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Imagen del Pokémon */
+  .pokemon-image {
+    padding: 10px;
+    border-radius: 15px;
+    background: radial-gradient(circle, #fff, transparent);
+  }
+  
+  /* Nombre del Pokémon */
+  .pokemon-name {
+    font-weight: bold;
+    color: #ffcb05;
+    font-size: 1.5rem;
+    text-shadow: 2px 2px 4px #333;
+  }
+  
+  /* Barra de vida estilizada */
+  .pokemon-life-bar {
+    height: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(255, 0, 0, 0.5);
+  }
+  
+  /* Efecto de turno activo */
+  .turn-active {
+    border-color: #ff6347;
+    box-shadow: 0 0 15px rgba(255, 99, 71, 0.8);
+  }
+  
+  /* Botón de ataque */
+  .btn-attack {
+    width: 100%;
+    color: #fff;
+    font-weight: bold;
+    background-color: #ff6347;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(255, 99, 71, 0.3);
+    transition: all 0.3s ease;
+  }
+  .btn-attack:disabled {
+    background-color: #444;
+    color: #aaa;
+  }
+  .btn-attack:hover:not(:disabled) {
+    background-color: #ff4500;
+    box-shadow: 0 8px 16px rgba(255, 69, 0, 0.5);
+  }
+  

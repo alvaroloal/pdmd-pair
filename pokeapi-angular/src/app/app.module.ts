@@ -13,6 +13,12 @@ import { MenuComponent } from './components/menu/menu.component';
 import { SpeciesListComponent } from './components/species-list/species-list.component';
 import { HomeComponent } from './components/home/home.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { PokemonImgPipe } from './pipes/pokemon-img.pipe';
+import { BattleComponent } from './pages/battle/battle.component';
+import { PokemonComponent } from './components/pokemon/pokemon.component';
+import { LottieComponent, provideLottieOptions } from 'ngx-lottie';
+
+
 
 @NgModule({
   declarations: [
@@ -24,16 +30,23 @@ import { FooterComponent } from './components/footer/footer.component';
     MenuComponent,
     SpeciesListComponent,
     HomeComponent,
-    FooterComponent
+    FooterComponent,
+    BattleComponent,
+    PokemonComponent,
+    PokemonImgPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    LottieComponent
   ],
   providers: [
     provideAnimationsAsync(),
-    provideHttpClient()
+    provideHttpClient(),
+    provideLottieOptions({
+      player: () => import('lottie-web'),
+    }),
   ],
   bootstrap: [AppComponent]
 })

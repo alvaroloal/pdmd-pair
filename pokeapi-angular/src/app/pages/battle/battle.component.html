@@ -1,0 +1,28 @@
+<div class="battle-container d-flex justify-content-center align-items-center">
+  <div class="row battle-row">
+    <!-- Jugador 1 -->
+    <div class="col-md-4 col-12 d-flex justify-content-center pokemon-container text-white">
+      <app-pokemon
+        [pokemonId]="pokemonPlayer1Id"
+        [life]="lifePokemon1"
+        [isMyTurn]="pokemonTurn == 1"
+        (onAttackDone)="applyDamage($event)"
+      ></app-pokemon>
+    </div>
+
+    <!-- Centro de la batalla (Texto VS) -->
+    <div class="col-md-4 d-flex justify-content-center align-items-center battle-center">
+      <div class="vs-text">VS</div>
+    </div>
+
+    <!-- Jugador 2 -->
+    <div class="col-md-4 col-12 d-flex justify-content-center pokemon-container">
+      <app-pokemon
+        [pokemonId]="pokemonPlayer2Id"
+        [life]="lifePokemon2"
+        [isMyTurn]="pokemonTurn == 2"
+        (onAttackDone)="applyDamage($event)"
+      ></app-pokemon>
+    </div>
+  </div>
+</div>

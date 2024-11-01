@@ -1,0 +1,47 @@
+/* Contenedor principal centrado */
+.battle-container {
+    min-height: 100vh;
+    background-color: #bfc7d6; /* Fondo oscuro tipo arena */
+  }
+  
+  .battle-row {
+    width: 100%;
+    max-width: 1200px;
+    border: 5px solid #ffcb05; /* Borde amarillo similar a Pokémon */
+    border-radius: 10px;
+    background-color: #2d2d44;
+    padding: 20px;
+    position: relative;
+    box-shadow: 0px 0px 20px rgba(255, 203, 5, 0.5); /* Sombra de batalla */
+  }
+  
+  /* Contenedor de cada Pokémon */
+  .battle-row .col-md-4 {
+    padding: 10px;
+  }
+  
+  .battle-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffcb05;
+    font-size: 2em;
+    font-weight: bold;
+  }
+  
+  .vs-text {
+    font-size: 3rem;
+    font-family: 'Arial Black', sans-serif;
+    color: #ffcb05;
+    text-shadow: 2px 2px 5px #e74c3c;
+  }
+  
+  /* Estilo de transición para el turno */
+  app-pokemon[isMyTurn="true"] {
+    border: 3px solid #ff6347;
+    padding: 5px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(255, 99, 71, 0.8); /* Glow rojo para indicar turno */
+    transition: all 0.3s ease-in-out;
+  }
+  
